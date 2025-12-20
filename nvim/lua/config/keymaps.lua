@@ -3,6 +3,6 @@
 -- Add any additional keymaps here
 
 vim.keymap.set("n", "<leader>pwd", function()
-  local dir = vim.fn.expand('%:p:h')
+  local dir = vim.fn.expand("%:p:h")
   print(dir)
 end, { desc = "Print buffer directory" })
