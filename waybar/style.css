@@ -1,0 +1,209 @@
+#waybar {
+    background-color: #010101;
+    border-radius: 15px;
+    margin: 8px 10px;
+    padding: 6px 12px;
+    min-height: 40px;
+    font-family: "FiraCode Nerd Font", monospace;
+    font-size: 15px;
+}
+
+#workspaces {
+    margin: 0px 12px;
+    font-family: "FiraCode Nerd Font", monospace;
+    font-size: 15px;
+}
+
+#workspaces button {
+    font-family: "FiraCode Nerd Font", monospace;
+    font-size: 15px;
+    color: #b0afb1;
+    background-color: #010101;
+    margin: 5px 8px 5px 0px;
+    border-radius: 12px;
+    font-weight: bold;
+    padding: 1px 8px;
+}
+
+#workspaces button.active, #workspaces button.focused {
+    background: #c0bec1;
+    color: #010101;
+    padding: 4px 20px;
+}
+
+#workspaces button.inactive {
+    background-color: #010101;
+    color: #e7e6e7;
+}
+
+#window {
+    color: #a1a1a1;
+    background-color: #010101;
+    border-radius: 15px;
+    margin: 5px 3px;
+    padding: 6px 12px;
+    font-weight: bold;
+}
+
+#idle_inhibitor {
+    color: #cececf;
+    background-color: #010101;
+    border-radius: 15px;
+    margin: 5px 3px;
+    padding: 6px 12px;
+    font-weight: bold;
+}
+
+#custom-notifications {
+    color: #a09ea1;
+    background-color: #010101;
+    border-radius: 15px;
+    margin: 5px 3px;
+    padding: 6px 12px;
+    font-weight: bold;
+}
+
+#language {
+    color: #a1a1a1;
+    background-color: #010101;
+    border-radius: 15px;
+    margin: 5px 3px;
+    padding: 6px 12px;
+    font-weight: bold;
+}
+
+#custom-power, #custom-lock {
+    color: #807f81;
+    background-color: #010101;
+    border-radius: 15px;
+    margin: 5px 10px 5px 5px;
+    padding: 6px 12px;
+    font-weight: bold;
+}
+
+#battery {
+    transition: background-color 0.5s ease-in-out;
+    color: #cececf;
+    background-color: #010101;
+    border-radius: 15px;
+    margin: 5px 3px;
+    padding: 6px 12px;
+    font-weight: bold;
+}
+
+#battery.charging {
+  animation: pulse-charging 5s infinite alternate ease-in-out;
+}
+
+@keyframes pulse-charging {
+  from {
+    background-color: #010101;
+  }
+  to {
+    background-color: rgba(166, 227, 161, 0.7);
+  }
+}
+
+#battery.warning:not(.charging) {
+  animation: pulse-warning 5s infinite alternate ease-in-out;
+  color: #c0bec1;
+}
+
+@keyframes pulse-warning {
+  from {
+    background-color: #010101;
+  }
+  to {
+    background-color: rgba(255, 165, 0, 0.5);
+  }
+}
+
+#battery.critical:not(.charging) {
+  animation: pulse 1s infinite alternate ease-in-out;
+  color: #b0afb1;
+}
+
+@keyframes pulse {
+  from {
+    background-color: #010101;
+  }
+  to {
+    background-color: rgba(255, 0, 0, 1);
+  }
+}
+
+#custom-gentoo, #clock, #custom-windowiconizer {
+    color: #908f90;
+    background-color: #010101;
+    border-radius: 15px;
+    margin: 5px 3px;
+    padding: 6px 12px;
+    font-weight: bold;
+}
+
+#cpu, #disk, #memory, #temperature {
+    color: #e7e6e7;
+    background-color: #010101;
+    border-radius: 15px;
+    margin: 5px 3px;
+    padding: 6px 12px;
+    font-weight: bold;
+}
+
+#cpu.warning, #disk.warning, #memory.warning, #temperature.warning {
+  animation: pulse-warning 1.5s infinite alternate ease-in-out;
+}
+
+#cpu.critical, #disk.critical, #memory.critical, #temperature.critical {
+  animation: pulse-critical 1s infinite alternate ease-in-out;
+}
+
+@keyframes pulse-warning {
+  from {
+    background-color: #010101;
+  }
+  to {
+    background-color: rgba(255, 100, 0, 1);
+  }
+}
+
+@keyframes pulse-critical {
+  from {
+    background-color: rgba(255, 50, 50, 0.7);
+  }
+  to {
+    background-color: rgba(255, 0, 0, 1);
+  }
+}
+
+#pulseaudio, #network, #backlight {
+    color: #cececf;
+    background-color: #010101;
+    border-radius: 15px;
+    margin: 5px 3px;
+    padding: 6px 12px;
+    font-weight: bold;
+}
+
+#custom-cava {
+    color: #807f81;
+    background-color: #010101;
+    border-radius: 15px;
+    font-family: "FiraCode Nerd Font", monospace;
+    font-size: 15px;
+    margin: 5px 3px;
+    padding: 6px 12px;
+    font-weight: bold;
+    min-width: 100px;
+}
+
+#custom-wallpaper-carousel {
+  background-color: #010101;
+  font-family: "FiraCode Nerd Font", monospace;
+  color: #a09ea1;
+  border-radius: 15px;
+  padding: 6px 12px;
+  font-weight: bold;
+  margin: 5px 3px;
+}
+
