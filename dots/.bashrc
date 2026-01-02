@@ -17,8 +17,6 @@ fi
 
 # Put your fun stuff here.
 
-
-
 ## SET XDG_RUNTIME_DIR manually 
 ## if you do not use elogind only
 #if test -z "$XDG_RUNTIME_DIR"; then
@@ -30,8 +28,6 @@ fi
 #export QT_QPA_PLATFORM=wayland
 #export SDL_VIDEODRIVER=wayland
 #export MOZ_ENABLE_WAYLAND=1
-
-eval "$(init bash)"
 
 # Idk who set this comment here, maybe	it's true
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
