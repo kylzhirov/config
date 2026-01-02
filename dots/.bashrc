@@ -17,22 +17,21 @@ fi
 
 # Put your fun stuff here.
 
-# Ensure XDG_RUNTIME_DIR is set
-if test -z "${XDG_RUNTIME_DIR}"; then
-    export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
-    if ! test -d "${XDG_RUNTIME_DIR}"; then
-        mkdir "${XDG_RUNTIME_DIR}"
-        chmod 0700 "${XDG_RUNTIME_DIR}"
-    fi
-fi
 
-export XDG_SESSION_TYPE=wayland
-export GDK_BACKEND=wayland
-export QT_QPA_PLATFORM=wayland
-export SDL_VIDEODRIVER=wayland
-export MOZ_ENABLE_WAYLAND=1
 
-eval "$(starship init bash)"
+## SET XDG_RUNTIME_DIR manually 
+## if you do not use elogind only
+#if test -z "$XDG_RUNTIME_DIR"; then
+#    export XDG_RUNTIME_DIR=$(mktemp -d /tmp/$(id -u)-runtime-dir.XXX)
+#fi
+#
+#export XDG_SESSION_TYPE=wayland
+#export GDK_BACKEND=wayland
+#export QT_QPA_PLATFORM=wayland
+#export SDL_VIDEODRIVER=wayland
+#export MOZ_ENABLE_WAYLAND=1
+
+eval "$(init bash)"
 
 # Idk who set this comment here, maybe	it's true
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
