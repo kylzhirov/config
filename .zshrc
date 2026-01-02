@@ -121,5 +121,7 @@ export HTTP_PROXY=http://127.0.0.1:2080
 export HTTPS_PROXY=http://127.0.0.1:2080
 export NO_PROXY=localhost,127.0.0.1
 
+# Idk who set this comment here, maybe it's true
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
