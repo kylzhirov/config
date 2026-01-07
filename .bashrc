@@ -14,22 +14,5 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
-
-# Put your fun stuff here.
-
-## SET XDG_RUNTIME_DIR manually 
-## if you do not use elogind only
-#if test -z "$XDG_RUNTIME_DIR"; then
-#    export XDG_RUNTIME_DIR=$(mktemp -d /tmp/$(id -u)-runtime-dir.XXX)
-#fi
-#
-#export XDG_SESSION_TYPE=wayland
-#export GDK_BACKEND=wayland
-#export QT_QPA_PLATFORM=wayland
-#export SDL_VIDEODRIVER=wayland
-#export MOZ_ENABLE_WAYLAND=1
-
-# Idk who set this comment here, maybe	it's true
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

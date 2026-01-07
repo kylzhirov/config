@@ -4,8 +4,12 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
 " Plug 'tpope/vim-sensible'
-Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+ Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
+" some settings are overriden by vim-sensible
+" create another config
+" in ~/.vim/after/plugin/custom.conf
+" for such cases
 call plug#end()
 
 nnoremap <C-n> :NERDTreeToggle<CR>
@@ -34,9 +38,6 @@ set nocompatible
 highlight LineNr ctermfg=NONE guifg=NONE
 highlight CursorLineNr ctermfg=NONE guifg=NONE
 
-" syntax on/off is overriden by vim-sensible
-" create another config with syntax off
-" in ~/.vim/after/plugin/custom.conf
 syntax on
 colorscheme catppuccin_mocha
 set termguicolors
@@ -72,8 +73,8 @@ set ic
 set smartcase
 
 " Next/prev tab binds
-" nnoremap <Tab> :tabn<CR>
-" nnoremap <S-Tab> :tabp<CR>
+nnoremap <Tab> :tabn<CR>
+nnoremap <S-Tab> :tabp<CR>
 
 
 "" Coc settings
@@ -91,6 +92,3 @@ nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
 " <CR> autocompletion confirm behavior
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-
-
