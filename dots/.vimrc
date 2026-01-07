@@ -1,9 +1,10 @@
 call plug#begin()
 
-Plug 'preservim/nerdtree'
-Plug 'tpope/vim-sensible'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jiangmiao/auto-pairs'
+Plug 'preservim/nerdtree'
+" Plug 'tpope/vim-sensible'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
 call plug#end()
 
@@ -33,10 +34,12 @@ set nocompatible
 highlight LineNr ctermfg=NONE guifg=NONE
 highlight CursorLineNr ctermfg=NONE guifg=NONE
 
-" syntax is overriden by vim-sensible
+" syntax on/off is overriden by vim-sensible
 " create another config with syntax off
 " in ~/.vim/after/plugin/custom.conf
-syntax off
+syntax on
+colorscheme catppuccin_mocha
+set termguicolors
 
 set scrolloff=5
 set background=dark
@@ -69,29 +72,25 @@ set ic
 set smartcase
 
 " Next/prev tab binds
-nnoremap <Tab> :tabn<CR>
-nnoremap <S-Tab> :tabp<CR>
+" nnoremap <Tab> :tabn<CR>
+" nnoremap <S-Tab> :tabp<CR>
 
-""""""""""""""
-"Coc settings"
+
+"" Coc settings
 
 " codeaction
 nmap <leader>ca <Plug>(coc-codeaction)
 xmap <leader>ca <Plug>(coc-codeaction-selected)
 
-" hover
-nnoremap <silent> K :call ShowDocumentation()<CR>
-
-function! ShowDocumentation()
-  if CocAction('hasProvider', 'hover')
-    call CocActionAsync('doHover')
-  else
-    call feedkeys('K', 'in')
-  endif
-endfunction
+" CoC hover
+nnoremap <silent> K :call CocActionAsync('doHover')<CR>
 
 " diagnostics
 nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
 
+" <CR> autocompletion confirm behavior
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-""""""""""""""
+
+
