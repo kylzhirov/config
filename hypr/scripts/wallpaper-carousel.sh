@@ -21,7 +21,8 @@ else
     hyprpaper > /dev/null 2>&1 & disown
     sleep 3
     echo "Random file: $FILE"
-    hyprctl hyprpaper reload ,"$FILE"
+    hyprctl hyprpaper preload "$FILE"
+    hyprctl hyprpaper wallpaper ",$FILE"
     wal -i $FILE -n # needs Pywal package
 fi
 source ~/.cache/wal/colors.sh
