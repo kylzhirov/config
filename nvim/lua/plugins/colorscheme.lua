@@ -6,11 +6,12 @@ return {
   { "rose-pine/neovim" },
   { "tiagovla/tokyodark.nvim" },
   { "neanias/everforest-nvim" },
+  { "catppuccin/nvim" },
 
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catpuccin",
+      colorscheme = "catppuccin-mocha",
     },
   },
 }

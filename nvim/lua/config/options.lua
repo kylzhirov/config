@@ -9,7 +9,7 @@ vim.g.snacks_animate = false
 vim.opt.guicursor = "n-v-c-sm-i-ci-ve:block,r-cr-o:hor20"
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "cpp", "rust", "html", "css", "java" },
+  pattern = { "c", "cpp", "rust", "html", "css", "java", "cmake" },
   callback = function()
     vim.bo.shiftwidth = 4
     vim.bo.tabstop = 4
@@ -17,4 +17,8 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.bo.expandtab = true
   end,
 })
+
+-- disable copy to system buffer
+vim.opt.clipboard = ""
+vim.keymap.set({ "n", "v" }, "<A-y>", '"+y', { desc = "Copy to system clipboard" })
 

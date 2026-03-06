@@ -4,7 +4,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
 " Plug 'tpope/vim-sensible'
- Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
 " some settings are overriden by vim-sensible
 " create another config
@@ -14,9 +14,7 @@ call plug#end()
 
 nnoremap <C-n> :NERDTreeToggle<CR>
 
-nnoremap <ALT-y> "+y
-vnoremap <ALT-y> "+y
-vmap <silent> y y:call system('wl-copy', @@)<CR>
+vmap <A-y> y y:call system('wl-copy', @@)<CR>
 
 nnoremap <Esc> :nohlsearch<CR>
 
@@ -39,6 +37,7 @@ highlight LineNr ctermfg=NONE guifg=NONE
 highlight CursorLineNr ctermfg=NONE guifg=NONE
 
 syntax on
+" colorscheme unokai
 colorscheme catppuccin_mocha
 set termguicolors
 

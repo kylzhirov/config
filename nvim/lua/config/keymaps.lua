@@ -6,3 +6,8 @@ vim.keymap.set("n", "<leader>pwd", function()
   local dir = vim.fn.expand("%:p:h")
   print(dir)
 end, { desc = "Print buffer directory" })
+
+vim.keymap.set("n", "<A-y>", function()
+  local text = vim.fn.getreg('"')
+  vim.fn.system("wl-copy", text)
+end, { desc = "Copy to system clipboard" })
